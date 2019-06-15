@@ -1,0 +1,131 @@
+body {
+    background-image: url(mountains.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    
+    
+}
+
+.red {
+    color: #ff0000;
+    font-weight: 900;
+}
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+
+.header {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Gloria Hallelujah', cursive;
+
+    font-size: 100px;
+    
+}
+#message {
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+
+}
+
+
+
+#pom-header {
+    font-size: 100px;
+ 
+}
+
+.container {
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.buttons {
+    display: flex;
+    /* margin-top: 400px; */
+    height: 500px;
+    
+    align-items: center;
+}
+.pausePlay {
+    display: flex;
+    align-items: center;
+    margin-top: 75px;
+}
+
+#start {
+    border-style: solid;
+    border-color: black;
+    border-radius: 500px;
+    border-width: 5px;
+    font-size: 50px;
+    padding: 50px;
+    outline:none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#pause, #play {
+    border-style: solid;
+    border-color: black;
+    border-radius: 100px;
+    border-width: 5px;
+    font-size: 5px;
+    padding: 50px;
+    margin-right: 40px;
+    margin-left: 50px;
+    outline:none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#fiveMin, #endSess, #redo {
+    margin-top: 40px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 90px;
+    border-width: 5px;
+    font-size: 1px;
+    padding: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    outline:none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#pause:hover, #play:hover{
+    background-color: #c3c3c3;
+    color: #FFFFFF;
+    transition: all 0.20s ease;
+}
+
+
+#fiveMin:hover, #endSess:hover, #redo:hover{
+    background-color: #c3c3c3;
+    color: #FFFFFF;
+    transition: all 0.20s ease;
+}
+#start:hover{
+	background-color: #c3c3c3;
+    color: #FFFFFF;
+    transition: all 0.20s ease;
+}
+
+#counter {
+    margin-top: 10px;
+    padding-right: 40px;
+    text-align: center;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    color: white;
+    padding-top: 120px;
+}
+
