@@ -61,7 +61,7 @@ const myTimer = setTimeout(() => {
  document.getElementById('seconds').innerHTML = seconds;
 
    countDown({minutes, seconds});
-}, 10);
+}, 1000);
 };
 // Function that allows the CountDown to run
 const initApp = () => {
