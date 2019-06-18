@@ -15,10 +15,10 @@ const startTimer = () => {
     };
 
 // Play audio for when timer runs out
-// const timerSound = () => {
-//     const gong = document.getElementById("timer");
-//     gong.play();
-// }
+const timerSound = () => {
+    const gong = document.getElementById("timer");
+    gong.play();
+}
 
 // What happens after start button is clicked 
 const handleClickStartButton = () => {
