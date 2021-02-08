@@ -9,10 +9,10 @@ const startTimer = () => {
 };
 
 // Plays audio for all the buttons 
- const playAudio = () => {
-  const $startSound = document.getElementById("audio");
-  $startSound.play();
-    };
+const playAudio = () => {
+    const $startSound = document.getElementById("audio");
+    $startSound.play();
+};
 
 // Play audio for when timer runs out
 const timerSound = () => {
@@ -23,7 +23,7 @@ const timerSound = () => {
 // What happens after start button is clicked 
 const handleClickStartButton = () => {
     $startButton.style.display = "none";
-    
+
     const $pausePlay = document.getElementsByClassName("pausePlay");
     const $pauseButton = document.getElementById("pause");
     const $playButton = document.getElementById('play');
@@ -35,39 +35,39 @@ const handleClickStartButton = () => {
     $playButton.addEventListener('click', handleClickPlayButton);
     initApp();
     playAudio();
-    
- };
+
+};
 // Countdown function. After timer hits 0, the 'counter turns red, and gong sounds through timerSound(), and options() runs
-const countDown = ({minutes, seconds}) => {
-    if (!minutes && seconds === '00'){
+const countDown = ({ minutes, seconds }) => {
+    if (!minutes && seconds === '00') {
         const timer = document.getElementById('counter');
-        
+
         options();
         timerSound();
         return;
-}
-// Sets timer. Subtracts the minutes set by 1
-const myTimer = setTimeout(() => {
-    if (seconds === '00'){
-       minutes = minutes - 1;
-     seconds = 60;
-   }
-// Subtracts the seconds
- seconds = seconds - 1;
- if (seconds < 10){
-     seconds = '0' + seconds;
- }
- document.getElementById('minutes').innerHTML = minutes + " :";
- document.getElementById('seconds').innerHTML = seconds;
+    }
+    // Sets timer. Subtracts the minutes set by 1
+    const myTimer = setTimeout(() => {
+        if (seconds === '00') {
+            minutes = minutes - 1;
+            seconds = 60;
+        }
+        // Subtracts the seconds
+        seconds = seconds - 1;
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        document.getElementById('minutes').innerHTML = minutes + " :";
+        document.getElementById('seconds').innerHTML = seconds;
 
-   countDown({minutes, seconds});
-}, 1000);
+        countDown({ minutes, seconds });
+    }, 1000);
 };
 // Function that allows the CountDown to run
 const initApp = () => {
-countDown({
- minutes: 25,
- seconds: 01
+    countDown({
+        minutes: 25,
+        seconds: 01
     });
 };
 
@@ -75,11 +75,11 @@ countDown({
 const options = () => {
     const $pausePlay = document.getElementsByClassName("pausePlay");
     const $middleButtons = document.getElementsByClassName("middleButtons");
-    
+
     for (var i = 0; i < $pausePlay.length; i++) {
         $pausePlay[i].style.display = "none";
     }
-    for(var i = 0; i < $middleButtons.length; i++){
+    for (var i = 0; i < $middleButtons.length; i++) {
         $middleButtons[i].style.display = "block";
     }
 
@@ -92,36 +92,36 @@ const options = () => {
     const endSession = document.getElementById('endSess');
     endSession.addEventListener('click', endSess);
 
-    
+
 }
- 
+
 //  Pause button
- const handleClickPauseButton = () => {
+const handleClickPauseButton = () => {
     clearInterval();
     const $pauseButton = document.getElementById("pause");
     $pauseButton.disabled = true;
     const $playButton = document.getElementById('play');
     $playButton.disabled = false;
-    
-   
- };
+
+
+};
 // Play button 
- const handleClickPlayButton = () => {
-    
+const handleClickPlayButton = () => {
+
     const $pauseButton = document.getElementById("pause");
     $pauseButton.disabled = false;
     const $playButton = document.getElementById("play");
     $playButton.disabled = true;
- };
+};
 
 //  Five minute break
- const fiveMinBreak = () => {
-    
+const fiveMinBreak = () => {
+
     countDown({
         minutes: 5,
         seconds: 01
-           });
- }
+    });
+}
 
 //Restart button
 const restartTimer = () => {
@@ -132,11 +132,11 @@ const restartTimer = () => {
 const endSess = () => {
     const $middleButtons = document.getElementsByClassName("middleButtons");
     const $message = document.getElementById('message');
-    for(var i = 0; i < $middleButtons.length; i++){
+    for (var i = 0; i < $middleButtons.length; i++) {
         $middleButtons[i].style.display = "none";
         counter.style.display = "none";
     }
-    
+
     $message.style.display = "block";
 }
 
