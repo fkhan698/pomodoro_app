@@ -61,7 +61,7 @@ const countDown = ({ minutes, seconds }) => {
         }
         document.getElementById('minutes').innerHTML = minutes + " :";
         document.getElementById('seconds').innerHTML = seconds;
-console.log(myTimer);
+
         staringMinutes = minutes;
         startingSeconds = seconds;
         countDown({ minutes, seconds });
