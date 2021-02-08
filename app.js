@@ -1,5 +1,7 @@
 const $startButton = document.getElementById("start");
-
+var staringMinutes = 0;
+var startingSeconds = 0;
+var myTimer;
 
 
 // Start button
@@ -47,7 +49,7 @@ const countDown = ({ minutes, seconds }) => {
         return;
     }
     // Sets timer. Subtracts the minutes set by 1
-    const myTimer = setTimeout(() => {
+    myTimer = setTimeout(() => {
         if (seconds === '00') {
             minutes = minutes - 1;
             seconds = 60;
@@ -60,14 +62,19 @@ const countDown = ({ minutes, seconds }) => {
         document.getElementById('minutes').innerHTML = minutes + " :";
         document.getElementById('seconds').innerHTML = seconds;
 
+        staringMinutes = minutes;
+        startingSeconds = seconds;
         countDown({ minutes, seconds });
     }, 1000);
 };
+
 // Function that allows the CountDown to run
 const initApp = () => {
+    staringMinutes = 25;
+    startingSeconds = 01;
     countDown({
-        minutes: 25,
-        seconds: 01
+        minutes: staringMinutes,
+        seconds: startingSeconds
     });
 };
 
@@ -97,7 +104,7 @@ const options = () => {
 
 //  Pause button
 const handleClickPauseButton = () => {
-    clearInterval();
+    clearInterval(myTimer);
     const $pauseButton = document.getElementById("pause");
     $pauseButton.disabled = true;
     const $playButton = document.getElementById('play');
@@ -112,6 +119,11 @@ const handleClickPlayButton = () => {
     $pauseButton.disabled = false;
     const $playButton = document.getElementById("play");
     $playButton.disabled = true;
+
+    countDown({
+        minutes: staringMinutes,
+        seconds: startingSeconds
+    });
 };
 
 //  Five minute break
